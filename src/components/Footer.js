@@ -1,7 +1,19 @@
+import {
+  FaFacebook,
+  FaInstagram,
+  FaTwitter,
+} from "react-icons/fa";
+
 function Footer() {
     return (
         <footer>
-            <p>&copy; 2021 Michael Whyte</p>
+            {/* Can make year dynamic */}
+            <p>&copy; 2023 Brooke, Tommy, Zybiah</p>
+            <div className="socialIcons">
+               <a href="https://www.facebook.com/"><FaFacebook className="social-icon"/></a>
+                <a href="https://www.instagram.com/"><FaInstagram className="social-icon"/></a>
+                <a href="https://twitter.com/"><FaTwitter className="social-icon"/></a>
+            </div>
         </footer>
     )
 }
