@@ -1,3 +1,4 @@
+import '../styles/footer.css';
 import {
   FaFacebook,
   FaInstagram,
