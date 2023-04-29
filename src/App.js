@@ -1,19 +1,27 @@
 import React from 'react';
-import Header from './components/Header';
-import SearchBar from './components/SearchBar';
-import Navbar from './components/Navbar'
-import Footer from './components/Footer';
+import {useEffect, useState} from 'react';
+import {API_URL} from "./components/globals/globals";
+import MovieCard from "./components/MovieCard";
 import './App.css';
 
 function App() {
+
+  const [movies, setMovies] = useState([])
+
+  useEffect(() => {
+    fetch(API_URL)
+      .then(res => res.json())
+      .then(data => setMovies(data.results))
+  })
+
+
   return (
     <div className="App">
-      <React.Fragment>
-        <Navbar/>
-        <SearchBar/>
-      </React.Fragment>
-      <Header/>
-      <Footer/>
+      <div className="movies">
+        {movies.map((movie) => 
+        <MovieCard {...movie}/>
+        )}
+      </div>
     </div>
   );
 }
