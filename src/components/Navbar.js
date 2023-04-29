@@ -1,24 +1,26 @@
 import React from "react";
-
+import '../styles/nav.css';
 
 function Navbar() {
     return (
+        <div className="nav">
         <header>
             <h3 className="logo">Logo</h3>
             <nav>
                 <ul>
                     <li>
-                    <a href="#">Home</a>
+                    <a href="#">About</a>
                     </li>
                     <li>
                     <a href="#">Favourites</a>
                     </li>
                     <li>
-                    <a href="#">About</a>
+                    <a href="#">Home</a>
                     </li>
                 </ul>
             </nav>
         </header>
+        </div>
     );
 }
 export default Navbar;
