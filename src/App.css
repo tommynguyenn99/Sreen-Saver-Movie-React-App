@@ -1,3 +1,31 @@
-* {
+body {
+  background-color: #111111;
+}
+
+p {
+  color: white;
+  max-width: 15rem;
+  text-align: center;
+}
+
+.title {
+}
+
+.card {
+  width: 18rem;
+}
+
+.poster {
+  width: 20%;
+}
+
+.poster img {
   width: 15rem;
+  display: grid;
+}
+
+.row {
+  display: grid;
+  max-width: 62.5rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }

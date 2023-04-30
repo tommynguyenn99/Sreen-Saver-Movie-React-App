@@ -16,12 +16,14 @@ function App() {
 
 
   return (
-    <div className="App">
-      <div className="movies">
+    <div className="body">
+      <div className="container-fluid">
+        <div className="row">
         {movies.map((movie) => 
         <MovieCard {...movie}/>
         )}
-      </div>
+        </div>
+        </div>
     </div>
   );
 }
