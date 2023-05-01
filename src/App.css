@@ -29,4 +29,5 @@ p {
   height: auto;
   background-size: cover;
   background-size: 100vw;
+  background-repeat: no-repeat;
 }
