@@ -15,7 +15,7 @@ function Navbar() {
               <a href="/favourites">Favourites</a>
             </li>
             <li>
-              <a href="/home">Home</a>
+              <a href="/">Home</a>
             </li>
           </ul>
         </nav>
