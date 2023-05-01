@@ -1,27 +1,27 @@
 import React from "react";
-import '../styles/nav.css';
+import "../styles/nav.css";
 
 function Navbar() {
-    return (
-        <div className="nav">
-        <header>
-            <h3 className="logo">Logo</h3>
-            <nav>
-                <ul>
-                    <li>
-                    <a href="#">About</a>
-                    </li>
-                    <li>
-                    <a href="#">Favourites</a>
-                    </li>
-                    <li>
-                    <a href="#">Home</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        </div>
-    );
+  return (
+    <div className="nav">
+      <header>
+        <h3 className="logo">Logo</h3>
+        <nav>
+          <ul>
+            <li>
+              <a href="/about">About</a>
+            </li>
+            <li>
+              <a href="/favourites">Favourites</a>
+            </li>
+            <li>
+              <a href="/home">Home</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+  );
 }
 export default Navbar;
 
