@@ -6,3 +6,6 @@ export const API_URL =
   "https://api.themoviedb.org/3/movie/popular?api_key=e3ff3458772dcbd41d3f954d2f21c122&language=en-US&page=1";
 export const API_IMG = "https://image.tmdb.org/t/p/w500/";
 export const API_BASE_URL = "https://api.themoviedb.org/3/movie";
+
+// Add api image for poster and backdrop
+// backdrop in diff size

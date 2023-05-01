@@ -1,11 +1,11 @@
-import '../styles/header.css';
+import "../styles/styles.scss";
 
 function Header() {
-    return (
-        <header>
-            <h1>MOVIE TITLE HERE</h1>
-        </header>
-    )
+  return (
+    <header>
+      <h1>MOVIE TITLE HERE</h1>
+    </header>
+  );
 }
 
 export default Header;

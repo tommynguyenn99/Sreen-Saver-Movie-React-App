@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { API_URL, API_IMG } from "../components/globals/globals";
 import MovieCard from "./MovieCard";
+import "../styles/styles.scss";
 
 function PageHome(props) {
   const [movies, setMovies] = useState([]);
@@ -28,14 +29,6 @@ function PageHome(props) {
                 })`,
               }}
             >
-              {selectedMovie && (
-                <div className="poster">
-                  <img
-                    src={API_IMG + selectedMovie.poster_path}
-                    alt={selectedMovie.title}
-                  />
-                </div>
-              )}
               <div className="hero-content">
                 <h1 className="hero-title">{selectedMovie.title}</h1>
                 <p className="hero-description">{selectedMovie.overview}</p>
