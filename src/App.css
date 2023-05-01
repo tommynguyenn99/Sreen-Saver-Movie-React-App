@@ -9,15 +9,8 @@ p {
   text-align: center;
 }
 
-.title {
-}
-
 .card {
   width: 18rem;
-}
-
-.poster {
-  width: 20%;
 }
 
 .poster img {
@@ -29,4 +22,11 @@ p {
   display: grid;
   max-width: 62.5rem;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.hero {
+  position: relative;
+  height: auto;
+  background-size: cover;
+  background-size: 100vw;
 }
