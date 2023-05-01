@@ -1,6 +1,7 @@
 import React from "react";
 import { API_IMG } from "../components/globals/globals";
 import { Link } from "react-router-dom";
+import "../styles/styles.scss";
 
 const MovieCard = (props) => {
   return (
