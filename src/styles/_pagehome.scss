@@ -1,0 +1,25 @@
+@use 'colours' as *;
+
+.body { 
+    background-color: $background;
+    color: $white;
+    .info {
+        .title, .rating, .release { 
+            color: $white;
+            max-width: 15rem;
+            text-align: center;
+        }
+    }
+    .row { 
+        display: grid;
+        max-width: 62.5rem;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    .hero { 
+        position: relative;
+        height: 500px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+

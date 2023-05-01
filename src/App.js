@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PageHome from "./components/PageHome";
 import PageSingleMovie from "./components/PageSingleMovie";
@@ -7,10 +6,9 @@ import PageAbout from "./components/PageAbout";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import "./styles/styles.scss";
 
 function App() {
-
-
   return (
     <BrowserRouter>
       <Header />
