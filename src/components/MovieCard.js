@@ -1,19 +1,27 @@
-import React from 'react';
+import React from "react";
 import { API_IMG } from "../components/globals/globals";
+import { Link } from "react-router-dom";
 
 const MovieCard = (props) => {
   return (
-    <div className='card'>
-      <div className="backdrop" style={{ backgroundImage: `url(${API_IMG + props.backdrop_path})` }}></div>
-      <div className="poster">
-        <img src={API_IMG + props.poster_path} alt="" />
+    <Link to={`/movie/${props.movie.id}`}>
+      <div className="card">
+        <div
+          className="backdrop"
+          style={{
+            backgroundImage: `url(${API_IMG + props.movie.backdrop_path})`,
+          }}
+        ></div>
+        <div className="poster">
+          <img src={API_IMG + props.movie.poster_path} alt="" />
+        </div>
+        <div className="info">
+          <p className="title">{props.movie.title}</p>
+          <p className="rating">{props.movie.vote_average}</p>
+          <p className="release">{props.movie.release_date}</p>
+        </div>
       </div>
-      <div className="info">
-        <p className='title'>{props.title}</p>
-        <p className='rating'>{props.vote_average}</p>
-        <p className='release'>{props.release_date}</p>
-      </div>
-    </div>
+    </Link>
   );
 };
 

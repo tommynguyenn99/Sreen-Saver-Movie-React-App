@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { API_URL, API_IMG } from '../components/globals/globals';
-import MovieCard from './MovieCard';
+import React, { useState, useEffect } from "react";
+import { API_URL, API_IMG } from "../components/globals/globals";
+import MovieCard from "./MovieCard";
 
 function PageHome(props) {
   const [movies, setMovies] = useState([]);
@@ -8,8 +8,8 @@ function PageHome(props) {
 
   useEffect(() => {
     fetch(API_URL)
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         setMovies(data.results);
         setSelectedMovie(data.results[0]); // Select the first movie as the default
       });
@@ -19,16 +19,19 @@ function PageHome(props) {
     <div className="body">
       {selectedMovie && (
         <div className="hero">
-          <img src={API_IMG + selectedMovie.poster_path} alt={selectedMovie.title} />
+          <img
+            src={API_IMG + selectedMovie.poster_path}
+            alt={selectedMovie.title}
+          />
           <div className="hero-content">
-            <p className='hero-description'>{selectedMovie.overview}</p>
+            <p className="hero-description">{selectedMovie.overview}</p>
           </div>
         </div>
       )}
       <div className="container-fluid">
         <div className="row">
-          {movies.map(movie => (
-            <MovieCard key={movie.id} {...movie} />
+          {movies.map((movie) => (
+            <MovieCard key={movie.id} movie={movie} />
           ))}
         </div>
       </div>
