@@ -42,10 +42,6 @@ function PageHome(props) {
               </div>
             </div>
           )}
-          <div className="hero-content">
-            <h1 className="hero-title">{selectedMovie.title}</h1>
-            <p className="hero-description">{selectedMovie.overview}</p>
-          </div>
         </div>
       )}
       <div className="container-fluid">
