@@ -1,0 +1,8 @@
+@use 'colours' as *;
+
+.about-content { 
+    .title-about {
+        display: flex;
+        justify-content: center;
+    }
+}
