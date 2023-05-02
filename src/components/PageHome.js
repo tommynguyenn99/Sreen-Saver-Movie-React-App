@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { API_URL, API_IMG } from "../components/globals/globals";
+import {
+  API_URL,
+  API_IMG,
+  API_IMG_BACKDROP,
+} from "../components/globals/globals";
 import MovieCard from "./MovieCard";
 import "../styles/styles.scss";
 
@@ -25,7 +29,7 @@ function PageHome(props) {
               className="hero"
               style={{
                 backgroundImage: `url(${
-                  API_IMG + selectedMovie.backdrop_path
+                  API_IMG_BACKDROP + selectedMovie.backdrop_path
                 })`,
               }}
             >
