@@ -1,3 +1,5 @@
+import { LOGO } from "../components/globals/globals";
+
 function PageAbout() {
   return (
     <div>
@@ -14,8 +16,11 @@ function PageAbout() {
           back to them later!
         </p>
         <p className="about-text">
-          This product uses TMDb API but is not endorsed or certified by TMDb.
+          This product uses TMDb API but is not endorsed or certified by TMDB.
         </p>
+        <a href="https://www.themoviedb.org/">
+          <img src={LOGO} alt="TMDB Logo" className="tmdb-logo" />
+        </a>
       </div>
     </div>
   );
