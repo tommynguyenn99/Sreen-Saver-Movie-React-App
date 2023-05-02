@@ -1,8 +1,22 @@
 @use 'colours' as *;
 
 .about-content { 
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid red;
+
     .title-about {
         display: flex;
         justify-content: center;
     }
+    .about-text { 
+        text-align: center;
+        font-size: 1rem;
+    }
+    .tmdb-logo {
+        width: 3.125rem;
+        height: 3.125rem;
+        margin-left: 2rem;
+    }
 }
+// make text vertically aligned 
