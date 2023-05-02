@@ -12,12 +12,15 @@
     }
     .row { 
         display: grid;
-        max-width: 62.5rem;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        width: 100%;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        text-align: center;
+        
     }
     .hero { 
+        margin-bottom: 2rem;
         position: relative;
-        height: 500px;
+        height: 37.5rem;
         background-size: cover;
         background-repeat: no-repeat;
     }
