@@ -2,7 +2,7 @@ import { LOGO } from "../components/globals/globals";
 
 function PageAbout() {
   return (
-    <div>
+    <div className="about-body">
       <section className="about-page">Page About</section>
       <div className="about-content">
         <h1 className="title-about">Welcome to MOVIE TITLE HERE</h1>
