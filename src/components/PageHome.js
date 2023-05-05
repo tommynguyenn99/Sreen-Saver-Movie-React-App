@@ -1,6 +1,10 @@
 // pagehome
 import React, { useState, useEffect } from "react";
-import { API_URL, API_IMG } from "../components/globals/globals";
+import {
+  API_URL,
+  API_IMG,
+  API_IMG_BACKDROP,
+} from "../components/globals/globals";
 import MovieCard from "./MovieCard";
 import "../styles/styles.scss";
 

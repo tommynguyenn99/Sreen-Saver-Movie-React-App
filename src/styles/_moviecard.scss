@@ -4,6 +4,16 @@
     img {
       width: 15rem;
       display: block;
+
+
+
+.card {
+    width: 18rem;
+    .poster {
+        margin: 0 auto;
+        img {
+            width: 12rem;
+        }
     }
     &:hover {
       &::before {
