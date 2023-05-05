@@ -69,7 +69,6 @@ function PageSingleMovie() {
                 controls
                 playing={false}
               />
-              <button className="play-btn">Play Trailer</button>
             </div>
           )}
         </div>

@@ -17,7 +17,7 @@ export const API_IMG_SINGLE_BACKDROP = "https://image.tmdb.org/t/p/w1280/";
 export const API_MOVIE_RUNTIME =
   "https://api.themoviedb.org/3/movie/550?api_key=e3ff3458772dcbd41d3f954d2f21c122";
 
-export const API_MOVIE_TRAILER = `https://api.themoviedb.org/3/movie/$/videos?api_key=e3ff3458772dcbd41d3f954d2f21c122&language=en-US`;
+// export const API_MOVIE_TRAILER = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=e3ff3458772dcbd41d3f954d2f21c122&language=en-US`;
 
 export const LOGO =
   "https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg";
