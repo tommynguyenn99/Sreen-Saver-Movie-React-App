@@ -6,9 +6,7 @@ import {
   API_KEY,
   API_IMG_SINGLE_POSTER,
   API_IMG_SINGLE_BACKDROP,
-  API_MOVIE_RUNTIME,
 } from "./globals/globals";
-import ReactPlayer from "react-player";
 import YouTubePlayer from "react-player/youtube";
 
 function PageSingleMovie() {
