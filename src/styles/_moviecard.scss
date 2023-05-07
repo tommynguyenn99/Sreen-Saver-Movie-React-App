@@ -1,6 +1,7 @@
 
 .card {
     width: 18rem;
+    position: relative;
     .poster {
         display: flex;
         justify-content: space-evenly;
@@ -36,4 +37,9 @@
       padding: 1rem;
       color: #fff;
     }
+  }
+
+  .fav-button{
+    position: relative;
+    z-index: 5;
   }
