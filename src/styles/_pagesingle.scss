@@ -1,0 +1,59 @@
+@use 'colours' as *;
+ .main-single-body {
+     background-color: $black;
+     width: 100vw;
+     .movie-content-box { 
+         width: 90%;
+        margin: 0 auto;
+         background-color: $background;
+         border: solid red 1px;
+     }
+     .single-movie-hero {
+         width: 100vw;
+         position: relative;
+         :before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent, black);
+            z-index: 1;
+          }
+         .single-backdrop-img {
+             height: 37.5rem;
+            //  the value above can be changed 
+             width: 100%;
+             object-fit: cover;
+             z-index: -1;
+             background-position: top;
+        }
+    }
+     .youtube-player {
+         float: right;
+         width: 50%;
+         margin: 1rem 2rem 0 0;
+         // boarder can be added 
+    }
+     .single-movie-content {
+         height: 100vh;
+         font-size: 1.2rem;
+         display: block;
+         justify-content: center;
+         text-align: center;
+      
+         .single-movie-information {
+             color: $white;
+            
+             .single-poster-img {
+                margin-top: 4rem;
+
+            }
+             .single-overview {
+                 width: 40%;
+              
+            }
+        }
+    }
+ }

@@ -1,10 +1,11 @@
 @use 'header';
 @use 'nav';
 @use 'moviecard';
+@use 'pagesingle' as *;
 @use 'pagehome';
 @use 'footer';
 @use 'slider' ;
 @use 'pageabout';
 @use 'footer' as *;
 @use 'colours' as *;
-
+@use 'reset' as *;

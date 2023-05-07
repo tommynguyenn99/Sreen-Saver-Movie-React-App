@@ -32,6 +32,7 @@ function PageHome(props) {
 
   const selectedMovie = movies[selectedMovieIndex];
 
+  // Slider
   useEffect(() => {
     const sliderItems = document.querySelectorAll(".slider-item");
     const dots = document.querySelectorAll(".dot");
@@ -54,7 +55,7 @@ function PageHome(props) {
   }, [selectedMovieIndex]);
 
   return (
-    <div className="body">
+    <div className="home-body">
       <div className="slider-container">
         <div className="slider">
           {movies.map((movie, index) => (
@@ -64,13 +65,17 @@ function PageHome(props) {
                 index === selectedMovieIndex ? "active" : ""
               }`}
               style={{
-                backgroundImage: `url(${API_IMG + movie.backdrop_path})`,
+                backgroundImage: `url(${
+                  API_IMG_BACKDROP + movie.backdrop_path
+                })`,
               }}
             >
+              <div className="hero-overlay"></div>
               <div className="hero-content">
                 <h1 className="hero-title">{movie.title}</h1>
                 <p className="hero-description">{movie.overview}</p>
                 <button className="more-info-button">More Info</button>
+                <a className="youtube-link" href=""></a>
               </div>
             </div>
           ))}
@@ -80,7 +85,9 @@ function PageHome(props) {
             {movies.map((_, index) => (
               <div
                 key={index}
-                className={`dot ${index === selectedMovieIndex ? "active" : ""}`}
+                className={`dot ${
+                  index === selectedMovieIndex ? "active" : ""
+                }`}
                 onClick={() => setSelectedMovieIndex(index)}
               ></div>
             ))}
@@ -99,3 +106,5 @@ function PageHome(props) {
 }
 
 export default PageHome;
+
+// Need to add button more info and play trailer to hero image
