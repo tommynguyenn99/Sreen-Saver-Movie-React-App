@@ -1,10 +1,27 @@
-footer {
-    padding: 20rem;
-    text-align: center;
-    margin-top: auto;
-    .socialIcons{
-        text-align: center;
+@use 'colours' as *;
+
+.footer-body {
+    position: relative;
+   min-height: 100vh;
+//   have to fix footer
     }
-}
-
-
+    
+    footer {
+    position: absolute; 
+    bottom: 0; 
+    width: 100%; 
+    text-align: center;
+    padding: 0.3rem;
+    }
+    
+    .socialIcons {
+    display: flex; 
+    justify-content: center;
+    }
+    
+    .social-icon {
+    font-size: 2rem;
+    margin: 0 0.3rem;
+    color: $blue;
+    // color is temporary, can be changed later
+    }
