@@ -1,8 +1,9 @@
 @use 'colours' as *;
 
-.body { 
+.home-body { 
     background-color: $background;
     color: $white;
+    padding-bottom: 4rem;
     .info {
         .title, .rating, .release { 
             color: $white;
@@ -17,12 +18,38 @@
         text-align: center;
         
     }
-    .hero { 
-        margin-bottom: 2rem;
-        position: relative;
-        height: 37.5rem;
-        background-size: cover;
-        background-repeat: no-repeat;
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        bottom:0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.3); /* Can make darker if needed */
+      }
+      
+    .hero-content { 
+        position: absolute;
+        top: 0;
+        bottom: 8rem;
+        margin-left: 2rem;
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
+        
+        .hero-title {
+            font-size: 3rem;
+            width: 35%;
+            text-shadow: 3px 2px $black;
+        }
+        
+        .hero-description {
+            width: 30%;
+            font-size: 1.2rem;
+            line-height: 1.2;
+            text-shadow: 1px 1px $black;
+        }
     }
+    
+
 }
 

@@ -55,7 +55,7 @@ function PageHome(props) {
   }, [selectedMovieIndex]);
 
   return (
-    <div className="body">
+    <div className="home-body">
       <div className="slider-container">
         <div className="slider">
           {movies.map((movie, index) => (

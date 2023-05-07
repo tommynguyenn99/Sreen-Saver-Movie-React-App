@@ -7,7 +7,9 @@ function Footer() {
     <div className="footer-body">
       <footer>
         {/* Can make year dynamic */}
-        <p>&copy; {new Date().getFullYear()} Brooke, Tommy, Zybiah</p>
+        <p className="footer-info">
+          &copy; {new Date().getFullYear()} Brooke, Tommy, Zybiah
+        </p>
         <div className="socialIcons">
           <a href="https://www.facebook.com/">
             <FaFacebook className="social-icon" />

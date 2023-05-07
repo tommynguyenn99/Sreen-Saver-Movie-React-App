@@ -1,27 +1,29 @@
 @use 'colours' as *;
 
-.footer-body {
-    position: relative;
-   min-height: 100vh;
-//   have to fix footer
-    }
-    
-    footer {
-    position: absolute; 
-    bottom: 0; 
-    width: 100%; 
-    text-align: center;
-    padding: 0.3rem;
-    }
-    
-    .socialIcons {
-    display: flex; 
-    justify-content: center;
-    }
-    
-    .social-icon {
-    font-size: 2rem;
-    margin: 0 0.3rem;
-    color: $blue;
-    // color is temporary, can be changed later
-    }
+
+footer {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: $background;
+  padding: 1rem 0;
+}
+
+.footer-info {
+  color: $white;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  margin: 0 0.3rem;
+  color:$white;
+}
