@@ -66,6 +66,7 @@ function PageHome(props) {
               <div className="hero-content">
                 <h1 className="hero-title">{movie.title}</h1>
                 <p className="hero-description">{movie.overview}</p>
+                <button className="more-info-button">More Info</button>
               </div>
             </div>
           ))}
