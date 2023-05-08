@@ -3,7 +3,7 @@ import "../styles/styles.scss";
 function Header() {
   return (
     <header>
-      <h1>MOVIE TITLE HERE</h1>
+      <h1>Screen Saver</h1>
     </header>
   );
 }
