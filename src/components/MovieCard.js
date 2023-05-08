@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { API_IMG } from "../components/globals/globals";
 import { Link } from "react-router-dom";
 import "../styles/styles.scss";
@@ -6,8 +6,8 @@ import { useFavorites } from "../hooks/useFavorites";
 
 const MovieCard = (props) => {
   const [isHovered, setIsHovered] = useState(false);
-  const favorites = useFavorites();
-  const isMovieInFavs = favorites.favs.includes(props.movie.id);
+  const [favorites, setFavorites] = useFavorites();
+  const isMovieInFavs = favorites.includes(props.movie.id);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -23,15 +23,15 @@ const MovieCard = (props) => {
 
   const handleFavClick = (e) => {
     // e.stopPropagation();
-    let newFavs;
     if (isMovieInFavs) {
-      newFavs = favorites.favs.filter((fav) => fav !== props.movie.id);
+      setFavorites(favorites.filter((fav) => fav !== props.movie.id));
     } else {
-      newFavs = [...favorites.favs, props.movie.id];
+      setFavorites([...favorites, props.movie.id]);
     }
-    favorites.setFavs(newFavs);
   };
-  console.log(props);
+  useEffect(() => {
+    console.log(favorites);
+  }, [favorites]);
   return (
     <div>
       <Link onClick={handleLinkClick} to={`/movie/${props.movie.id}`}>
