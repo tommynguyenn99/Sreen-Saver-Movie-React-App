@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import "./styles/styles.scss";
+import PageFavs from "./components/PageFavs";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
       <Header />
       <Navbar />
       <Routes>
-        <Route path="/about" exact element={<PageAbout />} />
+        <Route path="/about" element={<PageAbout />} />
+        <Route path="/favourites" element={<PageFavs />} />
         <Route path="/movie/:id" element={<PageSingleMovie />} />
         <Route path="/" exact element={<PageHome />} />
       </Routes>

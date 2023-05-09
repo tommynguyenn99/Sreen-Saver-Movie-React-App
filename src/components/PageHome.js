@@ -97,7 +97,7 @@ function PageHome(props) {
       <div className="container-fluid">
         <div className="row">
           {movies.map((movie) => (
-            <MovieCard key={movie.id} movie={movie} />
+            <MovieCard key={movie.id} movie={movie} isFavorite={false} />
           ))}
         </div>
       </div>
