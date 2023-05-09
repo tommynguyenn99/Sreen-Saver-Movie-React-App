@@ -47,14 +47,21 @@ const MovieCard = (props) => {
             }}
           ></div>
 
-          <div className="poster">
-            <img src={API_IMG + props.movie.poster_path} alt="" />
-          </div>
-          <div className="info">
-            <p className="title">{props.movie.title}</p>
-            <p className="rating">{props.movie.vote_average * 10}%</p>
-            <p className="release">{props.movie.release_date}</p>
-          </div>
+        <div className="poster">
+          {isHovered && (
+            <div className="overlay">
+              <p className="title">{props.movie.title}</p>
+              <p className="rating">{props.movie.vote_average * 10}%</p>
+            </div>
+          )}
+          <img
+            src={API_IMG + props.movie.poster_path}
+            alt=""
+            style={{
+              width: "100%",
+              height: "auto",
+            }}
+          />
         </div>
       </Link>
       <button className="fav-button" onClick={handleFavClick}>
@@ -65,3 +72,4 @@ const MovieCard = (props) => {
 };
 
 export default MovieCard;
+
