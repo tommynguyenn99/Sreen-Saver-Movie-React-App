@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+// import PlayTrailerButton from "../components/TrailerBtn";
 import "../styles/styles.scss";
 import {
   API_BASE_URL,
@@ -57,8 +58,8 @@ function PageSingleMovie() {
     }
   }, [movie]);
 
-  console.log(directors);
-  console.log(cast);
+  // console.log(directors);
+  // console.log(cast);
   // Movie duration math
   const runtimeInMins = movie?.runtime;
   const hours = Math.floor(runtimeInMins / 60);
@@ -70,6 +71,11 @@ function PageSingleMovie() {
   const roundedVote = Math.round(voteAverage * 10) / 10;
   const voteNumber = roundedVote * 10;
   const finalVoteNum = `${voteNumber}%`;
+
+  const handleClick = () => {
+    const trailer = `https://www.youtube.com/watch?v=${trailerUrl}`;
+    window.location = trailer;
+  };
 
   return (
     <div className="main-single-body">
@@ -83,33 +89,45 @@ function PageSingleMovie() {
       </div>
       <div className="movie-content-box">
         <div className="single-movie-content">
-          {trailerUrl && (
-            <div className="single-play-button-wrapper">
-              <YouTubePlayer
-                className="youtube-player"
-                url={`https://www.youtube.com/watch?v=${trailerUrl}`}
-                width="50"
-                controls
-                playing={false}
-              />
+          <h1 className="single-movie-title-left">{movie?.title}</h1>
+          <p className="single-movie-rating-left">Rating {finalVoteNum}</p>
+          {/* Add five star rating  */}
+          <div className="single-movie-information glass">
+            <div className="trailer-container">
+              {trailerUrl && (
+                <YouTubePlayer
+                  className="youtube-player"
+                  url={`https://www.youtube.com/watch?v=${trailerUrl}`}
+                  controls
+                  height="100%"
+                  width="100%"
+                  playing={false}
+                />
+              )}
             </div>
-          )}
 
-          <img
-            className="single-poster-img"
-            src={`${API_IMG_SINGLE_POSTER}${movie?.poster_path}`}
-            alt={`${movie?.title} poster`}
-          />
-          <div className="single-movie-information">
-            <h1 className="single-movie-title">{movie?.title}</h1>
-            <p className="single-movie-duration">{duration}</p>
-            <p className="single-movie-rating">{finalVoteNum}</p>
-            <p className="single-movie-release">{movie?.release_date}</p>
-            <p className="single-overview">{movie?.overview}</p>
-            <p className="single-director">
-              Directors: {movie?.directors?.name}
+            <h1 className="single-movie-title single-info">{movie?.title}</h1>
+            <hr className="line" />
+            <p className="single-movie-duration single-info">
+              Duration: {duration}
             </p>
-            <p className="single-cast">Cast: {movie?.cast}</p>
+            <p className="single-movie-rating single-info">{finalVoteNum}</p>
+            <p className="single-movie-release single-info">
+              Release Date: {movie?.release_date}
+            </p>
+            <h2 className="single-overview-header single-info">Overview</h2>
+            <p className="single-overview">{movie?.overview}</p>
+            <a
+              className="play-trailer-btn"
+              href={trailerUrl}
+              onClick={handleClick}
+            >
+              Play Trailer
+            </a>
+            {/* <p className="single-director single-info">
+              Directors: {movie?.directors}
+            </p> */}
+            {/* <p className="single-cast single-info">Cast: {movie?.cast}</p> */}
           </div>
         </div>
       </div>
@@ -117,3 +135,5 @@ function PageSingleMovie() {
   );
 }
 export default PageSingleMovie;
+
+// ASK randy about why some trailers aren't playing a actauly trailers
