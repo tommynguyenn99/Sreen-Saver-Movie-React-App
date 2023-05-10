@@ -14,8 +14,8 @@ export const API_IMG_BACKDROP = "https://image.tmdb.org/t/p/original/";
 export const API_BASE_URL = "https://api.themoviedb.org/3/movie";
 
 // SINGLE PAGE IMAGE
-export const API_IMG_SINGLE_POSTER = "https://image.tmdb.org/t/p/w185/";
-export const API_IMG_SINGLE_BACKDROP = "https://image.tmdb.org/t/p/w1280/";
+export const API_IMG_SINGLE_POSTER = "https://image.tmdb.org/t/p/w342/";
+export const API_IMG_SINGLE_BACKDROP = "https://image.tmdb.org/t/p/original/";
 export const API_MOVIE_RUNTIME =
   "https://api.themoviedb.org/3/movie/550?api_key=e3ff3458772dcbd41d3f954d2f21c122";
 

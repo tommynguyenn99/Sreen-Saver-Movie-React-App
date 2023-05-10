@@ -1,59 +1,226 @@
 @use 'colours' as *;
- .main-single-body {
-     background-color: $black;
-     width: 100vw;
-     .movie-content-box { 
-         width: 90%;
-        margin: 0 auto;
-         background-color: $background;
-         border: solid red 1px;
-     }
-     .single-movie-hero {
-         width: 100vw;
-         position: relative;
-         :before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, transparent, black);
-            z-index: 1;
-          }
-         .single-backdrop-img {
-             height: 37.5rem;
-            //  the value above can be changed 
-             width: 100%;
-             object-fit: cover;
-             z-index: -1;
-             background-position: top;
-        }
-    }
-     .youtube-player {
-         float: right;
-         width: 50%;
-         margin: 1rem 2rem 0 0;
-         // boarder can be added 
-    }
-     .single-movie-content {
-         height: 100vh;
-         font-size: 1.2rem;
-         display: block;
-         justify-content: center;
-         text-align: center;
-      
-         .single-movie-information {
-             color: $white;
-            
-             .single-poster-img {
-                margin-top: 4rem;
 
+.main-single-body {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+
+  .single-movie-hero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), $black );
+      z-index: 1;
+    }
+    
+    .single-backdrop-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .single-hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, $black);
+      z-index: 2;
+    }
+  }
+
+  .movie-content-box { 
+    flex: 1;
+    // background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 3;
+    position: relative;
+  }
+  .single-movie-content {
+    font-size: 1.2rem;
+    position: relative;
+    .single-movie-information {
+      color: $white;
+
+      .single-poster-img {
+        margin-top: 4rem;
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+      }
+
+    }
+    .trailer-container { 
+        right: 0;
+        .youtube-player {
+            margin: 1rem auto;
+            // boarder can be added 
+          }
+     }
+   }
+}
+
+
+// Media queries 
+
+@media (min-width: 20rem) {
+    .main-single-body {
+      position: relative;
+      .single-movie-title-left { 
+          display: none;
+      }
+      .single-hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        // background-color: rgba(0, 0, 0, 0.4);
+      }
+  
+      .trailer-container {
+        display: none;
+      }
+
+      .play-trailer-btn { 
+          background-color: grey;
+          color: $white;
+          padding: 0.2rem;
+          font-size: 1rem;
+          text-decoration: none;
+          display: flex;
+          justify-content: center;
+          width: 5rem;
+          margin: 0 auto;
+          margin-top: 2rem;
+       
+      }
+  
+      .single-backdrop-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .single-movie-information {
+          vertical-align: middle;
+          width: 90%;
+          margin: 0 auto;
+      .single-info { 
+          text-align: center;
+          margin: 1rem 0;
+      }
+      .play-trailer { 
+        margin: 0 auto;
+        border: solid 1px black;
+        padding: 0.2rem;
+      }
+      .single-overview {
+         margin: 0 auto;
+         width: 90%;
+      }
+
+      .single-overview-header { 
+          font-size: 1.2rem;
+      }
+    }
+  }
+}
+  @media (min-width: 48rem) {
+    .main-single-body {
+        .single-movie-content {
+            .single-movie-title-left { 
+                display: block;
+                width: 100%;
             }
-             .single-overview {
-                 width: 40%;
-              
+            .trailer-container {
+                display: block;
+                margin-bottom: 3rem;
+                
+            }
+            .single-movie-title-left { 
+                position: absolute;
+                left: 0;
+                margin-left: 2rem;
+                bottom: 5rem;
+                float: left;
+                width: 45%;
+                color: $white;
+              }
+              .single-movie-rating-left { 
+                position: absolute;
+                left: 0;
+                margin-left: 2rem;
+                bottom: 3rem;
+                float: left;
+                width: 45%;
+                color: $white;
+              }
+            
+            .single-movie-information {
+                float: right;
+                width: 45%;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* vertical alignment */
+                font-size: 0.9rem;
+                // glass effect
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(0.5rem);
+                box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+                .single-overview { 
+                    width: 90%;
+                    line-height: 1.2rem;
+                }
+                .single-movie-title {
+                    display: none;
+                }
+                .single-movie-rating { 
+                    display: none;
+                }
+                .play-trailer-btn {
+                    display: none;
+                }
+                .line { 
+                    border-top: 0.5px solid rgba(255, 255, 255, 0.1);
+                    border-radius: 2px;
+                    width: 90%;
+                    backdrop-filter: blur(5px);
+                    opacity: 0.3;
+                }
             }
         }
     }
- }
+    
+  }
+
+  @media (min-width: 64rem) { 
+            .main-single-body {
+                .single-movie-content {
+                    .trailer-container{ 
+                        width: 80%;
+                        height: 30%;
+                    }
+                .single-movie-information { 
+                    width: 50%;
+                    font-size: 1rem;
+                }
+    }
+  }
+  }
