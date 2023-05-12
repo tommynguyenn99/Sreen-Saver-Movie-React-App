@@ -10,6 +10,7 @@ import "./styles/styles.scss";
 import PageFavs from "./components/PageFavs";
 
 function App() {
+  // need to change tab name to movie title
   return (
     <BrowserRouter>
       <Header />
