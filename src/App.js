@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar";
 import "./styles/styles.scss";
 
 function App() {
+  // need to change tab name to movie title
   return (
     <BrowserRouter>
       <Header />
