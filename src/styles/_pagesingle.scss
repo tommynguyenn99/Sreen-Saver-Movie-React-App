@@ -68,6 +68,8 @@
         right: 0;
         .youtube-player {
             margin: 1rem auto;
+            width: 10%;
+            height: 100%;
             // boarder can be added 
           }
      }
@@ -119,6 +121,9 @@
                 }
       }
   
+      .single-poster-img {
+          display: none;
+      }
       .single-backdrop-img {
         width: 100%;
         height: 100%;
@@ -130,7 +135,7 @@
           margin: 0 auto;
       .single-info { 
           text-align: center;
-          margin: 1rem 0;
+          margin: 0.7rem 0;
       }
       .play-trailer { 
         margin: 0 auto;
@@ -153,15 +158,11 @@
   @media (min-width: 48rem) {
     .main-single-body {
         .single-movie-content {
+            width: 100%;
+
             .single-movie-title-left { 
                 display: block;
                 width: 100%;
-            }
-            .trailer-container {
-                display: block;
-                margin-bottom: 3rem;
-                width: 90%;
-                height: 30%;
             }
             .single-movie-title-left { 
                 position: absolute;
@@ -196,6 +197,15 @@
                 backdrop-filter: blur(10px);
                 -webkit-backdrop-filter: blur(0.5rem);
                 box-shadow: 0 8px 32px 0 $glassBoxShadow;
+                .trailer-container { 
+                    display: block;
+                    width: 90%;
+                    height: 100%;
+                .youtube-player {
+                    width: 100%;
+                    height: auto;
+                }
+            }
                 .single-overview { 
                     width: 80%;
                     line-height: 1.4rem;
@@ -227,15 +237,12 @@
             .main-single-body {
                 .single-movie-content {
                     .single-movie-title-left {
-                        font-size: 2.5rem;
+                        font-size: 2rem;
                     }
                     .trailer-container{ 
                         width: 90%;
-                        height: 40%;
-                        .youtube-player { 
-                            width: 120%;
-                            height: 110%;
-                        }
+                        height: 100%;
+
                     }
                 .single-movie-information { 
                     width: 50%;
@@ -244,3 +251,25 @@
     }
   }
   }
+
+  @media (min-width: 87.5rem) { 
+      .main-single-body {
+          .trailer-container {
+              width: 100%;
+              height: 100%;
+              .youtube-player {
+                  width: 100%;
+                  height: auto;
+              }
+    }
+      .single-movie-content {
+          width: 100%;
+          .single-movie-title-left {
+            font-size: 2.5rem;
+        }
+        .single-info { 
+            font-size: 1.2rem;
+        }
+      }
+  }
+}
