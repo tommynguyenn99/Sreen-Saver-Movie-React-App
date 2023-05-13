@@ -5,6 +5,7 @@ import "../styles/styles.scss";
 import {
   API_BASE_URL,
   API_KEY,
+  API_IMG_SINGLE_PAGE_POSTER,
   API_IMG_SINGLE_BACKDROP,
 } from "./globals/globals";
 import YouTubePlayer from "react-player/youtube";
@@ -133,8 +134,8 @@ function PageSingleMovie() {
                   className="youtube-player"
                   url={`https://www.youtube.com/watch?v=${trailerUrl}`}
                   controls
-                  height="100%"
-                  width="100%"
+                  width="auto"
+                  height="80%"
                   playing={false}
                 />
               )}
@@ -142,13 +143,13 @@ function PageSingleMovie() {
 
             <h1 className="single-movie-title single-info">{movie?.title}</h1>
             <hr className="line" />
-            <p className="single-movie-duration single-info">
-              <b>Duration</b>: {duration}
-            </p>
             <p className="single-movie-rating single-info">
               <MovieRating voteAverage={voteAverage} />
               &nbsp;
               {finalVoteNum}
+            </p>
+            <p className="single-movie-duration single-info">
+              <b>Duration</b>: {duration}
             </p>
             <p className="single-movie-release single-info">
               <b>Release Date</b> :{" "}
@@ -159,14 +160,7 @@ function PageSingleMovie() {
               })}
             </p>
             <h2 className="single-overview-header single-info">Overview</h2>
-            <p className="single-overview">{movie?.overview}</p>
-            <a
-              className="play-trailer-btn"
-              href={trailerUrl}
-              onClick={handleClick}
-            >
-              Play Trailer
-            </a>
+            <p className="single-overview single-info">{movie?.overview}</p>
             <p className="single-movie-directors single-info">
               {directors && directors.length > 0 && (
                 <>
@@ -181,6 +175,13 @@ function PageSingleMovie() {
                 </>
               )}
             </p>
+            <a
+              className="play-trailer-btn"
+              href={trailerUrl}
+              onClick={handleClick}
+            >
+              Play Trailer
+            </a>
           </div>
         </div>
       </div>
@@ -188,5 +189,3 @@ function PageSingleMovie() {
   );
 }
 export default PageSingleMovie;
-
-// ASK randy about why some trailers aren't playing a actauly trailers

@@ -37,9 +37,18 @@ footer {
 
 @media (min-width: 48rem) {
   footer { 
-    padding: 0.5rem 0;
+    padding: 0.4rem 0;
     .social-icon { 
-      font-size: 1.4rem;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+
+@media (min-width: 64rem) {
+  footer { 
+    .social-icon { 
+      font-size: 1.3rem;
     }
   }
   .footer-info { 

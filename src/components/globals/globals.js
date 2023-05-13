@@ -13,6 +13,9 @@ export const API_IMG = "https://image.tmdb.org/t/p/w500/";
 export const API_IMG_BACKDROP = "https://image.tmdb.org/t/p/original/";
 export const API_BASE_URL = "https://api.themoviedb.org/3/movie";
 
+// SINGLE MOVIE PAGE POSTER
+export const API_IMG_SINGLE_PAGE_POSTER = "https://image.tmdb.org/t/p/w185/";
+
 // SINGLE PAGE IMAGE
 export const API_IMG_SINGLE_POSTER = "https://image.tmdb.org/t/p/w342/";
 export const API_IMG_SINGLE_BACKDROP = "https://image.tmdb.org/t/p/original/";
