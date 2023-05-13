@@ -4,21 +4,30 @@ import {
   API_URL,
   API_IMG,
   API_IMG_BACKDROP,
+  buildApiUrl,
 } from "../components/globals/globals";
 import MovieCard from "./MovieCard";
 import "../styles/styles.scss";
 
+const categories = [
+  { id: "popular", label: "Popular" },
+  { id: "now_playing", label: "Now Playing" },
+  { id: "top_rated", label: "Top Rated" },
+  { id: "upcoming", label: "Upcoming" },
+];
+
 function PageHome(props) {
   const [movies, setMovies] = useState([]);
   const [selectedMovieIndex, setSelectedMovieIndex] = useState(0);
-
+  const [selectedCategory, setSelectedCategory] = useState(categories[0]);
   useEffect(() => {
-    fetch(API_URL)
+    const apiUrl = buildApiUrl(selectedCategory.id);
+    fetch(apiUrl)
       .then((res) => res.json())
       .then((data) => {
         setMovies(data.results);
       });
-  }, []);
+  }, [selectedCategory]);
 
   const handleNext = () => {
     setSelectedMovieIndex((prevIndex) => (prevIndex + 1) % movies.length);
@@ -92,6 +101,18 @@ function PageHome(props) {
               ></div>
             ))}
           </div>
+        </div>
+      </div>
+      <div className="container-fluid">
+        <div className="row">
+          {categories.map((category) => (
+            <button
+              key={category.id}
+              onClick={() => setSelectedCategory(category)}
+            >
+              {category.label}
+            </button>
+          ))}
         </div>
       </div>
       <div className="container-fluid">
