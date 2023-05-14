@@ -1,3 +1,12 @@
+
+@use 'colours' as *;
+@use 'typography' as *;
+
+.nav { 
+  font-family: $font;
+    .logo { 
+        float:left
+=======
 nav {
   position: fixed;
   top: 0;
@@ -20,6 +29,7 @@ nav {
     .items a {
       text-decoration: none;
       color:white;
+
     }
 
   

@@ -21,8 +21,10 @@ function PageHome(props) {
   const [selectedMovieIndex, setSelectedMovieIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
   useEffect(() => {
+
     const apiUrl = buildApiUrl(selectedCategory.id);
     fetch(apiUrl)
+
       .then((res) => res.json())
       .then((data) => {
         setMovies(data.results);
@@ -127,5 +129,3 @@ function PageHome(props) {
 }
 
 export default PageHome;
-
-// Need to add button more info and play trailer to hero image
