@@ -5,13 +5,12 @@ import "../styles/styles.scss";
 
 const MovieCard = ({ movie, isFavorite = false }) => {
   const [isHovered, setIsHovered] = useState(false);
-  // const [isFavorite, setIsFavorite] = useState(
-  //   localStorage.getItem(movie.id) ? true : false
-  // );
   const [isMovieFavorite, setIsMovieFavorite] = useState(isFavorite);
+
   useEffect(() => {
     setIsMovieFavorite(localStorage.getItem(movie.id) ? true : false);
   }, [movie.id]);
+
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
@@ -25,7 +24,6 @@ const MovieCard = ({ movie, isFavorite = false }) => {
   };
 
   const handleFavClick = (e) => {
-    // e.stopPropagation();
     const newIsFavorite = !isMovieFavorite;
     setIsMovieFavorite(newIsFavorite);
     if (newIsFavorite) {
@@ -34,12 +32,10 @@ const MovieCard = ({ movie, isFavorite = false }) => {
       localStorage.removeItem(movie.id);
     }
   };
-  // This is to remove the moviecard when it is removed from the favorites page. it's buggy so that's why it's commented out
-  // if (!isMovieFavorite) {
-  //   return null;
-  // }
+
   return (
-    <div>
+    
+    <div className="movie-card">
       <Link onClick={handleLinkClick} to={`/movie/${movie.id}`}>
         <div
           className={`card ${isHovered ? "hovered" : ""}`}

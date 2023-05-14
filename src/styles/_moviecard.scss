@@ -42,4 +42,16 @@
   font-family: $font;
 }
 
+@media (min-width: 20em){
+  .poster {
+    position: relative;
+  margin: 15px; /* space around the posters */
+  width: 90%;
+  height: auto; 
+  font-family: $font;
+  }
+}
+
+
+
 
