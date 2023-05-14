@@ -9,7 +9,8 @@ export const API_LANGUAGE_PARAM = `&language=${API_LANGUAGE}`;
 export const API_PAGE_DEFAULT = "1";
 export const API_PAGE_DEFAULT_PARAM = `&page=${API_PAGE_DEFAULT}`;
 export const API_URL =
-  "https://api.themoviedb.org/3/movie/popular?api_key=e3ff3458772dcbd41d3f954d2f21c122&language=en-US&page=1";
+  "https://api.themoviedb.org/3/movie/popular?api_key=e3ff3458772dcbd41d3f954d2f21c122&language=en-US&page=";
+
 // IMAGES
 // Use this for posters
 export const API_IMG = "https://image.tmdb.org/t/p/w500/";

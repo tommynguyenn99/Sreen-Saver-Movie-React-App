@@ -20,17 +20,33 @@ function PageHome(props) {
   const [movies, setMovies] = useState([]);
   const [selectedMovieIndex, setSelectedMovieIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
+  const [page, setPage] = useState(1);
+
+  // old code
   useEffect(() => {
-
-    const apiUrl = buildApiUrl(selectedCategory.id);
-    fetch(apiUrl)
-
+    fetch(API_URL)
       .then((res) => res.json())
       .then((data) => {
-        setMovies(data.results);
+        const movies = data.results.slice(0, 12);
+        setMovies(movies);
       });
-  }, [selectedCategory]);
+  }, []);
 
+  // code to display more movies, can delete later
+  // useEffect(() => {
+  //   const apiUrl = buildApiUrl(selectedCategory.id) + `&page=${page}`;
+  //   fetch(apiUrl)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setMovies((prevMovies) => [...prevMovies, ...data.results]);
+  //     });
+  // }, [selectedCategory, page]);
+
+  // useEffect(() => {
+  //   setPage(1);
+  // }, []);
+
+  // Not sure what this is for
   const handleNext = () => {
     setSelectedMovieIndex((prevIndex) => (prevIndex + 1) % movies.length);
   };
@@ -42,6 +58,7 @@ function PageHome(props) {
   };
 
   const selectedMovie = movies[selectedMovieIndex];
+  //
 
   // Slider
   useEffect(() => {
