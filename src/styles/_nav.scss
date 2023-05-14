@@ -2,11 +2,8 @@
 @use 'colours' as *;
 @use 'typography' as *;
 
-.nav { 
-  font-family: $font;
-    .logo { 
-        float:left
-=======
+
+
 nav {
   position: fixed;
   top: 0;
@@ -14,6 +11,7 @@ nav {
   height: 50px;
   background-color: rgba(0, 0, 0, 0.7); /* 50% opacity */
   z-index: 2000;
+  font-family: $font;
 
 
   .list {
