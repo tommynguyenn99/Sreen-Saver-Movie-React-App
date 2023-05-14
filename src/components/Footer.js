@@ -8,7 +8,8 @@ function Footer() {
       <footer>
         {/* Can make year dynamic */}
         <p className="footer-info">
-          &copy; {new Date().getFullYear()} Screen Saver
+          &copy; Screen Saver - For Educational Purpose{" "}
+          {new Date().getFullYear()}
         </p>
         <div className="socialIcons">
           <a href="https://www.facebook.com/">

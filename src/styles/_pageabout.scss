@@ -17,7 +17,6 @@
     justify-content: center;
     height: 100vh;
     margin: 0 auto;
-    line-height: 1.8rem;
     // background-color: $aboutPageBackground;
     border-radius: 4rem;
 
@@ -29,11 +28,17 @@
     }
     .about-text {
         color: $white;
+        text-align: center;
+    }
+
+    .tmdb-link {
+        text-align: center;
     }
     .tmdb-logo {
         width: 3.125rem;
         height: 3.125rem;
     }
+
 }
 }
 
@@ -44,21 +49,25 @@
         margin: 0 auto;
         font-size: 1rem;
     }
-
-    .about-text-1, .about-text-2, .about-text-3 { 
-        margin-bottom: 1rem;
-    }
     .title-about { 
-        margin-bottom: 1rem;
         font-size: 2rem;
         text-align: center;
         line-height: 2.5rem;
+        margin: 3rem 0 1rem 0;
     }
+    .about-text-1, .about-text-2, .about-text-3 { 
+        text-align: center;
+        line-height: 1.5rem;
+        margin-bottom: 1rem ;
+
     .about-slogan {
         font-style: italic;
+        text-align: center;
     }
-
 }
+    }
+    
+
 
 @media (min-width: 48rem) {
     .about-content {
@@ -66,7 +75,7 @@
     .about-text {
         width: 80%;
         margin: 0 auto;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .title-about { 
@@ -75,7 +84,7 @@
         text-align: center;
     }
     .tmdb-link {
-       margin-left: 4rem;
+    text-align: center;
 
     }
 }
@@ -85,11 +94,11 @@
 @media (min-width: 64rem) {
     .about-content {
     .tmdb-link {
-        margin: 1rem 0 0 5rem;
+        margin: 1rem 0 1rem 0;
     }
     .about-text {
-        font-size: 1.5rem;
-        line-height: 2rem;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
     }
     .title-about { 
         font-size: 3.5rem;
