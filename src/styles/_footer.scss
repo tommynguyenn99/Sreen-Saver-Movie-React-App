@@ -1,7 +1,9 @@
 @use 'colours' as *;
+@use 'typography' as *;
 
 
 footer {
+  font-family: $font;
   position: relative;
   bottom: 0;
   display: flex;

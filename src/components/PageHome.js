@@ -13,7 +13,8 @@ function PageHome(props) {
   const [selectedMovieIndex, setSelectedMovieIndex] = useState(0);
 
   useEffect(() => {
-    fetch(API_URL)
+    // change page number to scroll between diff movies in pages
+    fetch(API_URL + "&page=1")
       .then((res) => res.json())
       .then((data) => {
         setMovies(data.results);
@@ -106,5 +107,3 @@ function PageHome(props) {
 }
 
 export default PageHome;
-
-// Need to add button more info and play trailer to hero image

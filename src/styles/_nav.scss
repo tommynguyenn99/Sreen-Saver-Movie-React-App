@@ -1,6 +1,8 @@
 @use 'colours' as *;
+@use 'typography' as *;
 
 .nav { 
+  font-family: $font;
     .logo { 
         float:left
     }

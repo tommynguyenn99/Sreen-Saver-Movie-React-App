@@ -1,9 +1,13 @@
 @use 'colours' as *;
+@use 'typography' as *;
+
 
 .main-single-body {
+  font-family: $font;
   height: 100vh;
   position: relative;
   display: flex;
+      font-family: $font;
 
   .single-movie-hero {
     position: absolute;

@@ -1,6 +1,10 @@
 @use 'colours' as *;
+@use 'typography' as *;
+
+
 
 .home-body { 
+    font-family: $font;
     background-color: $background;
     color: $white;
     padding-bottom: 4rem;

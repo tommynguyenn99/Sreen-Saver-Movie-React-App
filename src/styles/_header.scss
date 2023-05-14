@@ -1,4 +1,7 @@
+@use "typography" as *; 
+
 header {
+    font-family: $font;
     h1{
         margin:0;
             text-align: center;
