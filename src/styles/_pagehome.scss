@@ -19,34 +19,49 @@
     .hero-overlay {
         position: absolute;
         top: 0;
-        bottom:0;
+        bottom: 0;
         left: 0;
         right: 0;
-        background-color: rgba(0, 0, 0, 0.3); /* Can make darker if needed */
+        background-color: rgba(0, 0, 0, 0.3);
+        /* Can make darker if needed */
       }
       
-    .hero-content { 
+      .hero-content {
         position: absolute;
         top: 0;
         bottom: 8rem;
-        display: flex; 
-        flex-direction: column; 
-        justify-content: center; 
-        
-        .hero-title {
-            font-size: 3rem;
-            width: 35%;
-            text-shadow: 3px 2px $black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      
+      .hero-title {
+        font-size: 3rem;
+        width: 35%;
+        text-shadow: 3px 2px $black;
+      }
+      
+      .hero-description {
+        width: 30%;
+        font-size: 1.2rem;
+        line-height: 1.2;
+        text-shadow: 1px 1px $black;
+      }
+      
+      /* Media query for screens with a maximum width of 790px */
+      @media (max-width: 790px) {
+        .hero-content {
+          flex-direction: row;
+          justify-content: space-around;
+          align-items: center;
         }
-        
+      
+        .hero-title,
         .hero-description {
-            width: 30%;
-            font-size: 1.2rem;
-            line-height: 1.2;
-            text-shadow: 1px 1px $black;
+          width: auto;
         }
-    }
-    
+      }
+      
 
     @media (min-width: 31em){
         .row {
