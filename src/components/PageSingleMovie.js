@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 // import PlayTrailerButton from "../components/TrailerBtn";
+import { FaStar, FaHeart, FaHeartBroken } from "react-icons/fa";
 import "../styles/styles.scss";
 import {
   API_BASE_URL,
   API_KEY,
-  API_IMG_SINGLE_PAGE_POSTER,
   API_IMG_SINGLE_BACKDROP,
 } from "./globals/globals";
 import YouTubePlayer from "react-player/youtube";
-import { FaStar } from "react-icons/fa";
 
 function PageSingleMovie() {
   const [movie, setMovie] = useState(null);
@@ -17,6 +16,7 @@ function PageSingleMovie() {
   const [directors, setDirectors] = useState("");
   const [casts, setCast] = useState([]);
   const { id } = useParams();
+  const [isMovieFavorite, setIsMovieFavorite] = useState(false);
 
   useEffect(() => {
     fetch(`${API_BASE_URL}/${id}?api_key=${API_KEY}`)
@@ -110,6 +110,14 @@ function PageSingleMovie() {
     return <>{stars}</>;
   };
 
+  // add fav
+  const handleFavClick = (e) => {
+    e.preventDefault();
+    const newIsFavorite = !isMovieFavorite;
+    setIsMovieFavorite(newIsFavorite);
+    // save to local storage or perform other actions as needed
+  };
+
   return (
     <div className="main-single-body">
       <div className="single-movie-hero">
@@ -126,7 +134,13 @@ function PageSingleMovie() {
           <p className="single-movie-rating-left">
             <MovieRating voteAverage={voteAverage} /> {finalVoteNum}
           </p>
-          {/* Add five star rating  */}
+          <div className="fav-button" onClick={handleFavClick}>
+            {isMovieFavorite ? (
+              <FaHeart className="heart" />
+            ) : (
+              <FaHeartBroken className="unheart" />
+            )}
+          </div>
           <div className="single-movie-information glass">
             <div className="trailer-container">
               {trailerUrl && (
@@ -188,4 +202,5 @@ function PageSingleMovie() {
     </div>
   );
 }
+
 export default PageSingleMovie;
