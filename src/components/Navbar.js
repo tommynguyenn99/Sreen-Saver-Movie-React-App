@@ -52,4 +52,3 @@ export default function Navbar() {
     </nav>
   );
 }
-//potential add? https://blog.logrocket.com/create-react-native-search-bar-from-scratch/

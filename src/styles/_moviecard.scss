@@ -30,9 +30,6 @@
   transition: opacity 0.3s;
 }
 
-.poster:hover .overlay {
-  opacity: 1;
-}
 
 .title {
   color: $white;
@@ -67,3 +64,9 @@
   }
 }
 
+@media (min-width: 800px) {
+  .poster:hover .overlay {
+    opacity: 1;
+  }
+  
+}
