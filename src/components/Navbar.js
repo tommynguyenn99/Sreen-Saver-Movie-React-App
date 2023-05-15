@@ -1,6 +1,6 @@
 import "../styles/styles.scss";
 import React, { useState, useEffect } from "react";
-// import { FaBars } from "react-icons/fa";
+import logo from "../logo/movie-logo-final.svg";
 
 export default function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -24,6 +24,9 @@ export default function Navbar() {
 
   return (
     <nav>
+       <div className="logo">
+        <img src={logo} alt="Movie Logo" />
+      </div>
       <button onClick={toggleNav} className="btn">
         <div className={`burger ${toggleMenu ? "open" : ""}`}>
           <span></span>

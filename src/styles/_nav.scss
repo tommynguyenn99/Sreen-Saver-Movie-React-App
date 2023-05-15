@@ -18,7 +18,8 @@ nav {
     align-items: center;
     position: relative;
     float: right;
-
+    top: -3rem;
+    
     .items {
       background-color: $navBackground;
       &:hover { 
