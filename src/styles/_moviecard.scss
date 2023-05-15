@@ -29,8 +29,10 @@
   opacity: 0;
   transition: opacity 0.3s;
 }
-
-
+.logo{
+  width: 200px;
+  height: auto;
+}
 .title {
   color: $white;
   font-size: 18px;
@@ -68,5 +70,5 @@
   .poster:hover .overlay {
     opacity: 1;
   }
-  
+
 }
