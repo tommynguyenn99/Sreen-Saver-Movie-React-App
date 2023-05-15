@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
 import "../styles/styles.scss";
+import React, { useState, useEffect } from "react";
+// import { FaBars } from "react-icons/fa";
 
 export default function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -45,10 +46,10 @@ export default function Navbar() {
         </ul>
       )}
 
-      <div
-        className={`overlay ${toggleMenu ? "open" : ""}`}
-        onClick={toggleNav}
-      />
+      {/* <button onClick={toggleNav} className="btn">
+        <FaBars style={{ color: "#ffffff", fontSize: "28px" }} />
+      </button> */}
     </nav>
   );
 }
+//potential add? https://blog.logrocket.com/create-react-native-search-bar-from-scratch/
