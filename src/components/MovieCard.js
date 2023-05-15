@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { API_IMG } from "../components/globals/globals";
 import { Link } from "react-router-dom";
 import "../styles/styles.scss";
+import { FaHeart, FaHeartBroken } from "react-icons/fa";
 
 const MovieCard = ({ movie, isFavorite = false }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -24,6 +25,7 @@ const MovieCard = ({ movie, isFavorite = false }) => {
   };
 
   const handleFavClick = (e) => {
+    e.preventDefault();
     const newIsFavorite = !isMovieFavorite;
     setIsMovieFavorite(newIsFavorite);
     if (newIsFavorite) {
@@ -33,8 +35,28 @@ const MovieCard = ({ movie, isFavorite = false }) => {
     }
   };
 
+  // const handleFavClick = (e) => {
+  //   const newIsFavorite = !isMovieFavorite;
+  //   setIsMovieFavorite(newIsFavorite);
+  //   if (newIsFavorite) {
+  //     localStorage.setItem(movie.id, JSON.stringify(movie));
+  //   } else {
+  //     localStorage.removeItem(movie.id);
+  //   }
+  // };
+
+  // Rating colour
+  function getRatingColor(voteAverage) {
+    if (voteAverage <= 5) {
+      return "red";
+    } else if (voteAverage >= 6 && voteAverage <= 7) {
+      return "yellow";
+    } else {
+      return "green";
+    }
+  }
+
   return (
-    
     <div className="movie-card">
       <Link onClick={handleLinkClick} to={`/movie/${movie.id}`}>
         <div
@@ -53,7 +75,23 @@ const MovieCard = ({ movie, isFavorite = false }) => {
             {isHovered && (
               <div className="overlay">
                 <p className="title">{movie.title}</p>
-                <p className="rating">{movie.vote_average * 10}%</p>
+                <p
+                  className="rating"
+                  style={{ color: getRatingColor(movie.vote_average) }}
+                >
+                  {movie.vote_average * 10}%
+                </p>
+
+                <p className="movie-overview">
+                  {movie.overview.split(" ").slice(0, 35).join(" ")}...
+                </p>
+                <div className="fav-button" onClick={handleFavClick}>
+                  {isMovieFavorite ? (
+                    <FaHeart className="heart" />
+                  ) : (
+                    <FaHeartBroken className="unheart" />
+                  )}
+                </div>
               </div>
             )}
             <img
@@ -67,9 +105,6 @@ const MovieCard = ({ movie, isFavorite = false }) => {
           </div>
         </div>
       </Link>
-      <div className="fav-button" onClick={handleFavClick}>
-        {isMovieFavorite ? "remove from favorites" : "add to favorites"}
-      </div>
     </div>
   );
 };

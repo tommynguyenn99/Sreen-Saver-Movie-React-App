@@ -1,0 +1,15 @@
+@use 'colours' as *;
+@use 'typography' as *;
+
+.favs-page { 
+    height: 100vh;
+    overflow: hidden;
+    background-color: $background;
+    .row { 
+        text-align: center;
+    }
+    .movie-card { 
+        width: 30%;
+        margin-top: 4rem;
+    }
+}

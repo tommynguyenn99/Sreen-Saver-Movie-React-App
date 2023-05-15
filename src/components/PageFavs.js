@@ -17,7 +17,6 @@ function PageFavs() {
   }, []);
   return (
     <section className="favs-page">
-      <h2>Page Favs</h2>
       <div className="container-fluid">
         <div className="row">
           {favoriteMovieIds.map((movieId) => (

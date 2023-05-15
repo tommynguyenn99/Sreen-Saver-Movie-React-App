@@ -2,10 +2,11 @@
 @use 'nav';
 @use 'moviecard';
 @use 'pagesingle' as *;
+@use 'pagefav' as *;
 @use 'pagehome';
-@use 'footer';
+@use 'footer' as *;
 @use 'slider' ;
-@use 'pageabout';
+@use 'pageabout' as *;
 @use 'footer' as *;
 @use 'colours' as *;
 @use 'reset' as *;

@@ -1,4 +1,5 @@
 @use "typography" as *; 
+@use "colours" as *;
 
 
 .poster {
@@ -7,6 +8,11 @@
   width: 200px; /* Adjust poster size */
   height: auto; 
   font-family: $font;
+  .movie-overview { 
+    color: $white;
+    margin: 0.5rem 0;
+    width: 90%;
+  }
 }
 
 .overlay {
@@ -15,7 +21,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,6 +48,15 @@
   font-family: $font;
 }
 
+.fav-button { 
+    .heart, .unheart{ 
+  font-size: 3rem;
+  color: $heartColour;
+  margin-top: 1rem;
+
+  }
+}
+
 @media (min-width: 20em){
   .poster {
     position: relative;
@@ -51,7 +66,4 @@
   font-family: $font;
   }
 }
-
-
-
 
