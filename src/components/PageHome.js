@@ -22,25 +22,29 @@ function PageHome(props) {
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
   const [page, setPage] = useState(1);
 
-  // old code
-  useEffect(() => {
-    fetch(API_URL)
-      .then((res) => res.json())
-      .then((data) => {
-        const movies = data.results.slice(0, 12);
-        setMovies(movies);
-      });
-  }, []);
+  // items for slider
 
-  // code to display more movies, can delete later
+  const moviesForSlider = movies.slice(0, 5);
+
+  // old code
   // useEffect(() => {
-  //   const apiUrl = buildApiUrl(selectedCategory.id) + `&page=${page}`;
-  //   fetch(apiUrl)
+  //   fetch(API_URL)
   //     .then((res) => res.json())
   //     .then((data) => {
-  //       setMovies((prevMovies) => [...prevMovies, ...data.results]);
+  //       const movies = data.results.slice(0, 12);
+  //       setMovies(movies);
   //     });
-  // }, [selectedCategory, page]);
+  // }, []);
+
+  // code to display more movies, can delete later
+  useEffect(() => {
+    const apiUrl = buildApiUrl(selectedCategory.id) + `&page=${page}`;
+    fetch(apiUrl)
+      .then((res) => res.json())
+      .then((data) => {
+        setMovies(data.results);
+      });
+  }, [selectedCategory, page]);
 
   // useEffect(() => {
   //   setPage(1);
@@ -86,7 +90,8 @@ function PageHome(props) {
     <div className="home-body">
       <div className="slider-container">
         <div className="slider">
-          {movies.map((movie, index) => (
+          {/* {movies.map((movie, index) => ( */}
+          {moviesForSlider.map((movie, index) => (
             <div
               key={movie.id}
               className={`slider-item ${
@@ -110,7 +115,8 @@ function PageHome(props) {
         </div>
         <div className="slider-navigation">
           <div className="dots-container">
-            {movies.map((_, index) => (
+            {/* {movies.map((_, index) => ( */}
+            {moviesForSlider.map((_, index) => (
               <div
                 key={index}
                 className={`dot ${
