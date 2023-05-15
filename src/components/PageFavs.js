@@ -5,7 +5,7 @@ function PageFavs() {
   const [favoriteMovieIds, setFavoriteMovieIds] = useState(
     Object.keys(localStorage)
   );
-
+  console.log(favoriteMovieIds);
   useEffect(() => {
     const handleStorageChange = () => {
       setFavoriteMovieIds(Object.keys(localStorage));
