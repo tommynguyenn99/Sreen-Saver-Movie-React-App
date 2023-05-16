@@ -129,7 +129,7 @@ function PageHome(props) {
           </div>
         </div>
       </div>
-      <div className="container-fluid">
+      <div className="container-fluid category-btn-wrapper">
         <div className="row">
           {categories.map((category) => (
             <button

@@ -13,11 +13,11 @@ const MovieCard = ({ movie, isFavorite = false }) => {
   }, [movie.id]);
 
   const handleMouseEnter = () => {
-    setIsHovered(true);
+    window.innerWidth >= 800 && setIsHovered(true);
   };
 
   const handleMouseLeave = () => {
-    setIsHovered(false);
+    window.innerWidth >= 800 && setIsHovered(false);
   };
 
   const handleLinkClick = (e) => {
@@ -102,6 +102,26 @@ const MovieCard = ({ movie, isFavorite = false }) => {
                 height: "auto",
               }}
             />
+          </div>
+        </div>
+        <div className="mobile-poster-content">
+          <p className="title">{movie.title}</p>
+          <p
+            className="rating"
+            style={{ color: getRatingColor(movie.vote_average) }}
+          >
+            {movie.vote_average * 10}%
+          </p>
+
+          <p className="movie-overview">
+            {movie.overview.split(" ").slice(0, 35).join(" ")}...
+          </p>
+          <div className="fav-button" onClick={handleFavClick}>
+            {isMovieFavorite ? (
+              <FaHeart className="heart" />
+            ) : (
+              <FaHeartBroken className="unheart" />
+            )}
           </div>
         </div>
       </Link>
