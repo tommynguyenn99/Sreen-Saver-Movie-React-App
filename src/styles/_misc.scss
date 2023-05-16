@@ -1,6 +1,26 @@
+@use "mixins" as *;
+
+* {
+    text-decoration: none;
+}
+
 .category-btn-wrapper {
     .row {
-        display: flex;
-        gap: 2rem;
+        display: grid;
+        gap: .5rem
     }
-} 
+
+    button {
+        @include btnStyle;   
+    }
+}  
+
+@media (min-width: 800px) {
+    .category-btn-wrapper {
+        .row {
+            display: flex;
+            gap: 2rem;
+            margin-left: 1rem;
+        }
+    }
+}

@@ -58,6 +58,28 @@
 
 .mobile-poster-content {
   color: #fff;
+
+  // .movie-overview {
+    text-align: left;
+    font-size: .85rem;
+    line-height: 1.3rem;
+    margin: auto 1rem auto 1rem;
+  // }
+
+  .movie-overview {
+    margin: 1rem .7rem 1rem .7rem;
+  }
+
+  .fav-mobile-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
+
+  .fav-button {
+    text-align: center;
+  }
+
 }
 
 @media (min-width: 20em){
