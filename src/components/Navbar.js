@@ -24,8 +24,10 @@ export default function Navbar() {
 
   return (
     <nav>
-       <div className="logo">
-        <img src={logo} alt="Movie Logo" />
+      <div className="logo">
+        <a href="/">
+          <img src={logo} alt="Screen Saver logo" />
+        </a>
       </div>
       <button onClick={toggleNav} className="btn">
         <div className={`burger ${toggleMenu ? "open" : ""}`}>
