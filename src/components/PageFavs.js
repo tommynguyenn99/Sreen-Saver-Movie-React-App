@@ -6,6 +6,7 @@ function PageFavs() {
     Object.keys(localStorage)
   );
 
+  // Handle local storage
   const handleUnfavAll = () => {
     localStorage.clear();
     setFavoriteMovieIds([]);

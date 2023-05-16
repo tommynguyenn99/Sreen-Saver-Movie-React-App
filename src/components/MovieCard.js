@@ -35,16 +35,6 @@ const MovieCard = ({ movie, isFavorite = false }) => {
     }
   };
 
-  // const handleFavClick = (e) => {
-  //   const newIsFavorite = !isMovieFavorite;
-  //   setIsMovieFavorite(newIsFavorite);
-  //   if (newIsFavorite) {
-  //     localStorage.setItem(movie.id, JSON.stringify(movie));
-  //   } else {
-  //     localStorage.removeItem(movie.id);
-  //   }
-  // };
-
   // Rating colour
   function getRatingColor(voteAverage) {
     if (voteAverage <= 5) {
@@ -64,6 +54,7 @@ const MovieCard = ({ movie, isFavorite = false }) => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
+          {/* Backdrop image */}
           <div
             className="backdrop"
             style={{
@@ -71,6 +62,7 @@ const MovieCard = ({ movie, isFavorite = false }) => {
             }}
           ></div>
 
+          {/* Poster image and info  */}
           <div className="poster">
             {isHovered && (
               <div className="overlay">

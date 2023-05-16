@@ -1,3 +1,5 @@
+@use 'colours' as *;
+
 .slider-container {
   position: relative;
   width: 100%;
@@ -44,8 +46,8 @@
 .more-info-button {
   margin-top: 10px;
   padding: 8px 16px;
-  background-color: #333;
-  color: #fff;
+  background-color: $btnColour;
+  color: $white;
   border: none;
   border-radius: 4px;
   font-size: 14px;
@@ -53,7 +55,7 @@
   text-decoration: none;
 
   &:hover {
-    background-color: #555;
+    background-color: $darkGrey;
   }
 }
 
@@ -75,13 +77,13 @@
 .dot {
   width: 0.8rem;
   height:  0.8rem;
-  background-color: rgba(220, 209, 209, 0.621);
+  background-color: $dotBackground;
   border-radius: 50%;
   margin-right: 0.31rem;
   cursor: pointer;
 }
 
 .dot.active {
-  background-color: rgba(0, 0, 0, 0.752);
+  background-color: $dotActive;
 }
 

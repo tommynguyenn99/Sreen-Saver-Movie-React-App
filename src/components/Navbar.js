@@ -50,10 +50,6 @@ export default function Navbar() {
           </li>
         </ul>
       )}
-
-      {/* <button onClick={toggleNav} className="btn">
-        <FaBars style={{ color: "#ffffff", fontSize: "28px" }} />
-      </button> */}
     </nav>
   );
 }
