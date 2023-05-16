@@ -25,7 +25,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: $overlayBackground;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -63,7 +63,7 @@
 }
 
 .mobile-poster-content {
-  color: #fff;
+  color: $white;
 
   // .movie-overview {
     text-align: left;

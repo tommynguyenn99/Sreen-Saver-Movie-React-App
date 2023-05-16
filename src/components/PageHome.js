@@ -1,11 +1,6 @@
 // pagehome
 import React, { useState, useEffect } from "react";
-import {
-  API_URL,
-  API_IMG,
-  API_IMG_BACKDROP,
-  buildApiUrl,
-} from "../components/globals/globals";
+import { API_IMG_BACKDROP, buildApiUrl } from "../components/globals/globals";
 import MovieCard from "./MovieCard";
 import "../styles/styles.scss";
 
@@ -23,18 +18,7 @@ function PageHome(props) {
   const [page, setPage] = useState(1);
 
   // items for slider
-
   const moviesForSlider = movies.slice(0, 5);
-
-  // old code
-  // useEffect(() => {
-  //   fetch(API_URL)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       const movies = data.results.slice(0, 12);
-  //       setMovies(movies);
-  //     });
-  // }, []);
 
   // code to display more movies, can delete later
   useEffect(() => {
@@ -45,24 +29,6 @@ function PageHome(props) {
         setMovies(data.results);
       });
   }, [selectedCategory, page]);
-
-  // useEffect(() => {
-  //   setPage(1);
-  // }, []);
-
-  // Not sure what this is for
-  const handleNext = () => {
-    setSelectedMovieIndex((prevIndex) => (prevIndex + 1) % movies.length);
-  };
-
-  const handlePrev = () => {
-    setSelectedMovieIndex((prevIndex) =>
-      prevIndex === 0 ? movies.length - 1 : prevIndex - 1
-    );
-  };
-
-  const selectedMovie = movies[selectedMovieIndex];
-  //
 
   // Slider
   useEffect(() => {
@@ -90,7 +56,6 @@ function PageHome(props) {
     <div className="home-body">
       <div className="slider-container">
         <div className="slider">
-          {/* {movies.map((movie, index) => ( */}
           {moviesForSlider.map((movie, index) => (
             <div
               key={movie.id}
@@ -116,7 +81,6 @@ function PageHome(props) {
         </div>
         <div className="slider-navigation">
           <div className="dots-container">
-            {/* {movies.map((_, index) => ( */}
             {moviesForSlider.map((_, index) => (
               <div
                 key={index}
