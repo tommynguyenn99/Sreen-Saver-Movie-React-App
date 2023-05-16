@@ -8,6 +8,8 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import "./styles/styles.scss";
 import PageFavs from "./components/PageFavs";
+import { APP_FOLDER_NAME } from "./globals";
+<BrowserRouter basename={`/${APP_FOLDER_NAME}`}></BrowserRouter>;
 
 function App() {
   // need to change tab name to movie title
